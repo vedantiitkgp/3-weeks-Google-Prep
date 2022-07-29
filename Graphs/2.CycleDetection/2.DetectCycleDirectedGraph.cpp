@@ -6,9 +6,9 @@ bool detectCycle(unordered_map<int, vector<int>>& m, unordered_set<int>& visited
 	bag.insert(node);
 	for(auto nbr: m[node]) {
 	    if(bag.find(nbr) != bag.end()) return true;
-		else if(visited.find(nbr) == visited.end()) {
+	    else if(visited.find(nbr) == visited.end()) {
 	        if(detectCycle(m, visited, nbr, node, bag)) return true;
-		}
+	    }
 	}
 	bag.erase(node);
 	return false;
